@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="database.Fakultete">
-  <grid id="27dc6" binding="Form" layout-manager="GridLayoutManager" row-count="7" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="Form" layout-manager="GridLayoutManager" row-count="9" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="601" height="410"/>
+      <xy x="20" y="20" width="771" height="451"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="a98f0" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="10" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Arial" size="20"/>
-          <text value="Fakultete v Sloveniji"/>
-        </properties>
-      </component>
-      <component id="c24e8" class="javax.swing.JTable" binding="fakultete">
-        <constraints>
-          <grid row="1" column="3" row-span="4" col-span="7" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="50"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="50951" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
@@ -35,7 +18,7 @@
       </component>
       <component id="8df2d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Ključna beseda:"/>
@@ -43,7 +26,7 @@
       </component>
       <component id="a1246" class="javax.swing.JLabel">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Opis: "/>
@@ -51,13 +34,13 @@
       </component>
       <component id="fc01" class="javax.swing.JLabel">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Kraj: "/>
         </properties>
       </component>
-      <component id="a442d" class="javax.swing.JTextField" binding="ime">
+      <component id="a442d" class="javax.swing.JTextField" binding="txtime">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -65,15 +48,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="3105f" class="javax.swing.JTextField" binding="kljucna_beseda">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="deae7" class="javax.swing.JTextField" binding="opis">
+      <component id="3105f" class="javax.swing.JTextField" binding="txtkljucna_beseda">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -81,7 +56,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="506db" class="javax.swing.JTextField" binding="kraj_id">
+      <component id="deae7" class="javax.swing.JTextField" binding="txtopis">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -91,7 +66,7 @@
       </component>
       <component id="7979f" class="javax.swing.JButton" binding="IZBRISIButton">
         <constraints>
-          <grid row="5" column="9" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="10" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="IZBRIŠI"/>
@@ -99,7 +74,7 @@
       </component>
       <component id="a3142" class="javax.swing.JButton" binding="POSODOBIButton" default-binding="true">
         <constraints>
-          <grid row="5" column="8" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="9" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="POSODOBI"/>
@@ -107,10 +82,56 @@
       </component>
       <component id="34992" class="javax.swing.JButton" binding="VNESIButton" default-binding="true">
         <constraints>
-          <grid row="5" column="3" row-span="2" col-span="5" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="3" row-span="3" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="VNESI"/>
+        </properties>
+      </component>
+      <scrollpane id="f536b">
+        <constraints>
+          <grid row="1" column="3" row-span="5" col-span="8" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="18b27" class="javax.swing.JTable" binding="fakultete">
+            <constraints/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="a98f0" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Arial" size="20"/>
+          <text value="Fakultete v Sloveniji"/>
+        </properties>
+      </component>
+      <component id="681b0" class="javax.swing.JButton" binding="poglejPorgrameIzbraneFakulteteButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Poglej porgrame izbrane fakultete"/>
+        </properties>
+      </component>
+      <component id="9f824" class="javax.swing.JComboBox" binding="kraji">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="49d31" class="javax.swing.JButton" binding="OSVEZIButton">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="OSVEŽI"/>
         </properties>
       </component>
     </children>

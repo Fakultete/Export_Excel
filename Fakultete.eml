@@ -2,4 +2,7 @@
 <component inherit-compiler-output="true" inheritJdk="true">
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="rs2xml.jar" scope="COMPILE">
+		<srcroot url="jar://$USER_HOME$/Downloads/rs2xml.jar!/src"/>
+	</lib>
 </component>

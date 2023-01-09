@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Prikaz fakultet v Sloveniji na formi (v obliki tabele)">
+    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Ustvarjena GUI Form-a za vnos podatkov">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fakultete.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Fakultete.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Fakultete.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Fakultete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;248&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zoja7/Downloads/postgresql-42.5.1.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zoja7/Documents/Toad Data Modeler/GeneratedScripts/Fakultete.sql&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -61,9 +67,20 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;postgresql&quot;
+    ],
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743&quot;
     ]
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/3b2b5340-a2a6-44d7-90b3-8db28732e743/console.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3b2b5340-a2a6-44d7-90b3-8db28732e743" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +93,11 @@
       <workItem from="1672222186970" duration="1527000" />
       <workItem from="1672656417249" duration="27188000" />
       <workItem from="1672730640447" duration="7260000" />
-      <workItem from="1672932037236" duration="5225000" />
+      <workItem from="1672932037236" duration="6693000" />
+      <workItem from="1673092019983" duration="20764000" />
+      <workItem from="1673166002307" duration="6644000" />
+      <workItem from="1673266037629" duration="3676000" />
+      <workItem from="1673272661578" duration="10453000" />
     </task>
     <task id="LOCAL−00001" summary="Database">
       <created>1672149745904</created>
@@ -102,7 +123,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1672738841433</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="Ustvarjena GUI Form-a za vnos podatkov">
+      <created>1672939480464</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1672939480464</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +149,12 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Database" />
     <MESSAGE value="Prikaz fakultet v Sloveniji na formi (v obliki tabele)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prikaz fakultet v Sloveniji na formi (v obliki tabele)" />
+    <MESSAGE value="Ustvarjena GUI Form-a za vnos podatkov" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ustvarjena GUI Form-a za vnos podatkov" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Fakultete$Fakultete.ic" NAME="Fakultete Coverage Results" MODIFIED="1673094925885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>database.*</FILTER>
+    </SUITE>
   </component>
 </project>
