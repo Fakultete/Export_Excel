@@ -37,7 +37,7 @@
           <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Kraj: "/>
+          <text value="KRAJ: "/>
         </properties>
       </component>
       <component id="a442d" class="javax.swing.JTextField" binding="txtime">
@@ -69,6 +69,7 @@
           <grid row="6" column="10" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-6142130"/>
           <text value="IZBRIŠI"/>
         </properties>
       </component>
@@ -77,6 +78,7 @@
           <grid row="6" column="9" row-span="3" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-7940699"/>
           <text value="POSODOBI"/>
         </properties>
       </component>
@@ -85,6 +87,7 @@
           <grid row="6" column="3" row-span="3" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-7940699"/>
           <text value="VNESI"/>
         </properties>
       </component>
@@ -109,15 +112,17 @@
         </constraints>
         <properties>
           <font name="Arial" size="20"/>
+          <foreground color="-2932672"/>
           <text value="Fakultete v Sloveniji"/>
         </properties>
       </component>
-      <component id="681b0" class="javax.swing.JButton" binding="poglejPorgrameIzbraneFakulteteButton" default-binding="true">
+      <component id="681b0" class="javax.swing.JButton" binding="POJDINAPROGRAMEButton" default-binding="true">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Poglej porgrame izbrane fakultete"/>
+          <background color="-5589249"/>
+          <text value="POJDI NA PROGRAME"/>
         </properties>
       </component>
       <component id="9f824" class="javax.swing.JComboBox" binding="kraji">
@@ -131,6 +136,7 @@
           <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-7940699"/>
           <text value="OSVEŽI"/>
         </properties>
       </component>

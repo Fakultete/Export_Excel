@@ -1,14 +1,16 @@
 package database;
 
 import net.proteanit.sql.DbUtils;
-
 import javax.swing.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 
 public class Fakultete{
@@ -19,9 +21,9 @@ public class Fakultete{
     private JTextField txtkljucna_beseda;
     private JTextField txtopis;
     private JTextField txtkraj;
-    private JPanel Form;
+    public JPanel Form;
     private JTable fakultete;
-    private JButton poglejPorgrameIzbraneFakulteteButton;
+    private JButton POJDINAPROGRAMEButton;
     private JComboBox kraji;
     private JButton OSVEZIButton;
 
@@ -178,7 +180,6 @@ public class Fakultete{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
                 try {
                     pst = con.prepareStatement("SELECT k.ime FROM kraji k LEFT OUTER JOIN fakultete f on k.id = f.kraj_id ORDER BY k.ime ASC;");
                 } catch (SQLException ex) {
@@ -199,6 +200,30 @@ public class Fakultete{
             @Override
             public void actionPerformed(ActionEvent e) {
                 table_load();
+            }
+        });
+        POJDINAPROGRAMEButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                /*if (Desktop.isDesktopSupported()) {
+                    try {
+                        File myFile = new File("C:/Users/Zoja7/IdeaProjects/Fakultete/src/database/Programi.java");
+                        Desktop.getDesktop().open(myFile);
+                    } catch (IOException ex) {
+                        // no application registered for PDFs
+                    }
+                }*/
+                JFrame frame = new JFrame("Programi");
+                frame.setContentPane(new Programi().Form);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Form.setVisible(false);
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
