@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="INSERT, UPDATE, DELETE nad tabelo &quot;programi&quot;">
+    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Ustvarjeni Formi za LOGIN in REGISTRACIJO">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Fakultete.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Fakultete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Programi.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Programi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Register.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Register.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Register.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +100,7 @@
       <workItem from="1673092019983" duration="20764000" />
       <workItem from="1673166002307" duration="6644000" />
       <workItem from="1673266037629" duration="3676000" />
-      <workItem from="1673272661578" duration="24902000" />
+      <workItem from="1673272661578" duration="32058000" />
     </task>
     <task id="LOCAL−00001" summary="Database">
       <created>1672149745904</created>
@@ -140,7 +150,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1673296592587</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Ustvarjeni Formi za LOGIN in REGISTRACIJO">
+      <created>1673298950887</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1673298950887</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +180,8 @@
     <MESSAGE value="INSERT, UPDATE, DELETE v tabeli fakultete" />
     <MESSAGE value="Uporabniški vmesnik za delo s tabelo &quot;Programi&quot;" />
     <MESSAGE value="INSERT, UPDATE, DELETE nad tabelo &quot;programi&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="INSERT, UPDATE, DELETE nad tabelo &quot;programi&quot;" />
+    <MESSAGE value="Ustvarjeni Formi za LOGIN in REGISTRACIJO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ustvarjeni Formi za LOGIN in REGISTRACIJO" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Fakultete$Fakultete.ic" NAME="Fakultete Coverage Results" MODIFIED="1673094925885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

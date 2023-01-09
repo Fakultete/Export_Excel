@@ -4,13 +4,10 @@ import net.proteanit.sql.DbUtils;
 import javax.swing.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
 import java.sql.*;
 
 public class Fakultete{
@@ -26,6 +23,7 @@ public class Fakultete{
     private JButton POJDINAPROGRAMEButton;
     private JComboBox kraji;
     private JButton OSVEZIButton;
+    private JButton ODJAVAButton;
 
 
     public static void main(String[] args) {
@@ -81,7 +79,7 @@ public class Fakultete{
                     pst.setString(3, opis_f);
                     pst.setString(4, kraj_f);
 
-                    pst.executeUpdate();
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "FAKULTETA VNEŠENA!");
                     table_load();
                     txtime.setText("");
@@ -135,7 +133,7 @@ public class Fakultete{
                     pst.setString(4, opis_f);
                     pst.setString(5, kraj_f);
 
-                    pst.executeUpdate();
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "USPEŠNO POSODOBLJENO!");
                     table_load();
                     txtime.setText("");
@@ -163,7 +161,7 @@ public class Fakultete{
                     pst = con.prepareStatement("SELECT delete_fakultete(?)");
                     pst.setInt(1, auto_id);
 
-                    pst.executeUpdate();
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI FAKULTETO!");
                     table_load();
                     txtime.setText("");
@@ -215,6 +213,22 @@ public class Fakultete{
                 }*/
                 JFrame frame = new JFrame("Programi");
                 frame.setContentPane(new Programi().Form);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Form.setVisible(false);
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+        ODJAVAButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("PRIJAVA");
+                frame.setContentPane(new Login().Panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

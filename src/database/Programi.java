@@ -25,6 +25,7 @@ public class Programi {
     private JButton IZBRISIButton;
     private JButton NAZAJNAFAKULTETEButton;
     private JComboBox iscifakulteta;
+    private JButton ODJAVAButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Fakultete");
@@ -80,7 +81,7 @@ public class Programi {
                     pst.setString(3, stopnja_p);
                     pst.setString(4, fakulteta_p);
 
-                    pst.executeUpdate();
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "PROGRAM VNEŠEN!");
                     table_load();
                     txtime.setText("");
@@ -133,7 +134,7 @@ public class Programi {
                     pst.setString(4, stopnja_p);
                     pst.setString(5, fakulteta_p);
 
-                    pst.executeUpdate();
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "USPEŠNO POSODOBLJENO!");
                     table_load();
                     txtime.setText("");
@@ -161,8 +162,17 @@ public class Programi {
                     pst = con.prepareStatement("SELECT delete_programi(?)");
                     pst.setInt(1, auto_id);
 
-                    pst.executeUpdate();
-                    JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI PROGRAM!");
+                    JFrame frame = new JFrame("PRIJAVA");
+                    frame.setContentPane(new Login().Panel);
+                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frame.pack();
+                    frame.setVisible(true);
+                    Form.setVisible(false);
+                    try {
+                        con.close();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }                    JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI PROGRAM!");
                     table_load();
                     txtime.setText("");
                     txtopis.setText("");
@@ -268,6 +278,12 @@ public class Programi {
                 } catch (SQLException r) {
                     r.printStackTrace();
                 }
+            }
+        });
+        ODJAVAButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
