@@ -4,6 +4,7 @@ import net.proteanit.sql.DbUtils;
 import javax.swing.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -42,7 +43,6 @@ public class Fakultete{
             System.out.println("Povezava na bazo uspešna!");
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
-
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

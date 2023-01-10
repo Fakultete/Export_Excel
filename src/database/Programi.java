@@ -162,17 +162,7 @@ public class Programi {
                     pst = con.prepareStatement("SELECT delete_programi(?)");
                     pst.setInt(1, auto_id);
 
-                    JFrame frame = new JFrame("PRIJAVA");
-                    frame.setContentPane(new Login().Panel);
-                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.pack();
-                    frame.setVisible(true);
-                    Form.setVisible(false);
-                    try {
-                        con.close();
-                    } catch (SQLException ex) {
-                        throw new RuntimeException(ex);
-                    }                    JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI PROGRAM!");
+                    JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI PROGRAM!");
                     table_load();
                     txtime.setText("");
                     txtopis.setText("");
@@ -283,7 +273,17 @@ public class Programi {
         ODJAVAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JFrame frame = new JFrame("PRIJAVA");
+                frame.setContentPane(new Login().Panel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Form.setVisible(false);
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }

@@ -15,6 +15,7 @@ public class Login {
     private JLabel label1;
     private JPasswordField txtpass;
     public JPanel Panel;
+    private JButton ZAMENJNJAJGESLOButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("PRIJAVA");
@@ -83,6 +84,22 @@ public class Login {
                     e1.printStackTrace();
                     JOptionPane.showMessageDialog(null, "POSKUSITE ZNOVA!");
 
+                }
+            }
+        });
+        ZAMENJNJAJGESLOButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("ZAMENJAVA GESLA");
+                frame.setContentPane(new Zamenjava_gesla().panel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Panel.setVisible(false);
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });
