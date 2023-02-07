@@ -26,15 +26,25 @@ public class Programi {
     private JButton NAZAJNAFAKULTETEButton;
     private JComboBox iscifakulteta;
     private JButton ODJAVAButton;
+    private JTextField txtnovafak;
+    private JButton želimDodatiNovoFakultetoButton;
+    private JLabel nov_f;
+    private JTextField txt_kljuc;
+    private JTextField txt_opis;
+    private JComboBox comboBox1;
+    private JLabel a;
+    private JLabel b;
+    private JLabel c;
+    private JButton DODAJButton;
+    //private static JFrame frame;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Fakultete");
+        JFrame frame = new JFrame("Programi");
         frame.setContentPane(new Programi().Form);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }
-
     Connection con;
     PreparedStatement pst;
     public void connect() {
@@ -51,7 +61,7 @@ public class Programi {
     }
     void table_load() {
         try {
-            pst = con.prepareStatement("SELECT p.id, p.ime, p.opis, s.naziv, f.ime FROM programi p INNER JOIN stopnje s ON s.id=p.stopnja_id INNER JOIN fakultete f ON f.id=p.fakulteta_id ORDER BY p.id;");
+            pst = con.prepareStatement("SELECT * FROM select_programi();");
             ResultSet rs = pst.executeQuery();
             programi.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException e) {
@@ -68,30 +78,77 @@ public class Programi {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                txtnovafak.setEnabled(false);
+                nov_f.setEnabled(false);
+                txt_kljuc.setEnabled(false);
+                txt_opis.setEnabled(false);
+                comboBox1.setEnabled(false);
+                a.setEnabled(false);
+                b.setEnabled(false);
+                c.setEnabled(false);
+                combofakulteta.setEnabled(true);
                 String ime_p, opis_p, stopnja_p, fakulteta_p;
                 ime_p = txtime.getText();
                 opis_p = txtopis.getText();
                 stopnja_p = combostopnja.getSelectedItem().toString();
                 fakulteta_p = combofakulteta.getSelectedItem().toString();
 
-                try {
-                    pst = con.prepareStatement("SELECT insert_programi(?, ?, ?, ?);");
-                    pst.setString(1, ime_p);
-                    pst.setString(2, opis_p);
-                    pst.setString(3, stopnja_p);
-                    pst.setString(4, fakulteta_p);
+                if(ime_p.isEmpty() || stopnja_p.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!!");
+                    return;
+                }
+                if(želimDodatiNovoFakultetoButton.isSelected())
+                {
+                    try {
+                        String ime, kljucna_b, opis, kraj;
+                        ime = txtnovafak.getText();
+                        kljucna_b = txt_kljuc.getText();
+                        opis = txt_opis.getText();
+                        kraj = comboBox1.getSelectedItem().toString();
 
-                    pst.executeQuery();
-                    JOptionPane.showMessageDialog(null, "PROGRAM VNEŠEN!");
-                    table_load();
-                    txtime.setText("");
-                    txtopis.setText("");
-                    combostopnja.setSelectedItem("");
-                    combofakulteta.setSelectedItem("");
+                        pst = con.prepareStatement("SELECT insert_programi_fakulteta(?, ?, ?, ?, ?, ?, ?);");
+                        pst.setString(1, ime_p);
+                        pst.setString(2, opis_p);
+                        pst.setString(3, stopnja_p);
+                        pst.setString(4, ime);
+                        pst.setString(5, kljucna_b);
+                        pst.setString(6, opis);
+                        pst.setString(7, kraj);
 
-                } catch (SQLException e1) {
+                        pst.executeQuery();
+                        JOptionPane.showMessageDialog(null, "PROGRAM VNEŠEN!");
+                        table_load();
+                        txtime.setText("");
+                        txtopis.setText("");
+                        combostopnja.setSelectedItem("");
+                        combofakulteta.setSelectedItem("");
 
-                    e1.printStackTrace();
+                    } catch (SQLException e1) {
+
+                        e1.printStackTrace();
+                    }
+                }
+                else {
+                    try {
+                        pst = con.prepareStatement("SELECT insert_programi(?, ?, ?, ?);");
+                        pst.setString(1, ime_p);
+                        pst.setString(2, opis_p);
+                        pst.setString(3, stopnja_p);
+                        pst.setString(4, fakulteta_p);
+
+                        pst.executeQuery();
+                        JOptionPane.showMessageDialog(null, "PROGRAM VNEŠEN!");
+                        table_load();
+                        txtime.setText("");
+                        txtopis.setText("");
+                        combostopnja.setSelectedItem("");
+                        combofakulteta.setSelectedItem("");
+
+                    } catch (SQLException e1) {
+
+                        e1.printStackTrace();
+                    }
                 }
             }
         });
@@ -125,6 +182,12 @@ public class Programi {
                 opis_p = txtopis.getText();
                 stopnja_p = combostopnja.getSelectedItem().toString();
                 fakulteta_p = combofakulteta.getSelectedItem().toString();
+
+                if(ime_p.isEmpty() || stopnja_p.isEmpty() || fakulteta_p.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!!");
+                    return;
+                }
 
                 try {
                     pst = con.prepareStatement("SELECT update_programi(?, ?, ?, ?, ?);");
@@ -162,6 +225,7 @@ public class Programi {
                     pst = con.prepareStatement("SELECT delete_programi(?)");
                     pst.setInt(1, auto_id);
 
+                    pst.executeQuery();
                     JOptionPane.showMessageDialog(null, "USPEŠNO STE IZBRISALI PROGRAM!");
                     table_load();
                     txtime.setText("");
@@ -177,17 +241,17 @@ public class Programi {
         NAZAJNAFAKULTETEButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame frame = new JFrame("Fakultete");
-                frame.setContentPane(new Fakultete().Form);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                Form.setVisible(false);
                 try {
                     con.close();
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+                JFrame frame = new JFrame("Fakultete");
+                frame.setContentPane(new Fakultete().Form);
+                frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Form.setVisible(false);
             }
         });
         combostopnja.addMouseListener(new MouseAdapter() {
@@ -195,7 +259,7 @@ public class Programi {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 try {
-                    pst = con.prepareStatement("SELECT DISTINCT s.naziv FROM stopnje s LEFT OUTER JOIN programi p ON s.id=p.stopnja_id;");
+                    pst = con.prepareStatement("SELECT select_stopnja();");
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -215,7 +279,7 @@ public class Programi {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 try {
-                    pst = con.prepareStatement("SELECT DISTINCT ime FROM fakultete;");
+                    pst = con.prepareStatement("SELECT select_fakultete_combobox();");
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -241,7 +305,7 @@ public class Programi {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 try {
-                    pst = con.prepareStatement("SELECT DISTINCT ime FROM fakultete;");
+                    pst = con.prepareStatement("SELECT select_fakultete_combobox();");
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -261,7 +325,7 @@ public class Programi {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String r = iscifakulteta.getSelectedItem().toString();
-                    pst = con.prepareStatement("SELECT p.id, p.ime, p.opis, s.naziv, f.ime FROM programi p INNER JOIN stopnje s ON s.id=p.stopnja_id INNER JOIN fakultete f ON f.id=p.fakulteta_id WHERE f.ime=? ORDER BY p.id;");
+                    pst = con.prepareStatement("SELECT * FROM select_fakulteta_isci(?);");
                     pst.setString(1, r);
                     ResultSet rs = pst.executeQuery();
                     programi.setModel(DbUtils.resultSetToTableModel(rs));
@@ -273,14 +337,48 @@ public class Programi {
         ODJAVAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 JFrame frame = new JFrame("PRIJAVA");
                 frame.setContentPane(new Login().Panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 Form.setVisible(false);
+            }
+        });
+        želimDodatiNovoFakultetoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            txtnovafak.setEnabled(true);
+            nov_f.setEnabled(true);
+            txt_kljuc.setEnabled(true);
+            txt_opis.setEnabled(true);
+            comboBox1.setEnabled(true);
+            a.setEnabled(true);
+            b.setEnabled(true);
+            c.setEnabled(true);
+            combofakulteta.setEnabled(false);
+            }
+        });
+        comboBox1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
                 try {
-                    con.close();
+                    pst = con.prepareStatement("SELECT select_kraji_combobox();");
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+                try{
+                    ResultSet rs = pst.executeQuery();
+                    while(rs.next()) {
+                        String abcd = rs.getString(1);
+                        comboBox1.addItem(abcd);
+                    }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }

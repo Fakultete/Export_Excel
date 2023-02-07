@@ -61,6 +61,11 @@ public class Register {
                         username_u = txtusername.getText();
                         pass_u = txtpass.getText();
 
+                if(username_u.isEmpty() || pass_u.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!");
+                    return;
+                }
                         try {
                             pst = con.prepareStatement("SELECT insert_uporabniki(?, ?);");
                             pst.setString(1, username_u);

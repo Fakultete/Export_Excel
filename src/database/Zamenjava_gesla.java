@@ -13,6 +13,8 @@ public class Zamenjava_gesla {
     private JPasswordField txtnovo;
     private JButton OKButton;
     public JPanel panel;
+    private JTextField txtusername;
+    private JButton NAZAJButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("ZAMENJAVA GESLA");
@@ -40,17 +42,25 @@ public Zamenjava_gesla() {
     OKButton.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String staro_u, novo_u;
+            String uporabnik, staro_u, novo_u;
+            uporabnik = txtusername.getText();
             staro_u = txtstaro.getText();
             novo_u = txtnovo.getText();
 
+            if(uporabnik.isEmpty() || staro_u.isEmpty() || novo_u.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!!");
+                return;
+            }
             try {
-                pst = con.prepareStatement("SELECT update_geslo(?, ?);");
-                pst.setString(1, staro_u);
-                pst.setString(2, novo_u);
+                pst = con.prepareStatement("UPDATE uporabniki SET geslo=? WHERE username=? AND geslo=?;");
+                pst.setString(1, novo_u);
+                pst.setString(2, uporabnik);
+                pst.setString(3, staro_u);
 
-                pst.executeQuery();
+                pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "USPEŠNO POSODOBLJENO GESLO!");
+                txtusername.setText("");
                 txtstaro.setText("");
                 txtnovo.setText("");
 
@@ -65,11 +75,31 @@ public Zamenjava_gesla() {
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+
             }
             catch (SQLException e1)
             {
                 e1.printStackTrace();
+                JOptionPane.showMessageDialog(null, "POSKUSITE ZNOVA!");
             }
+        }
+    });
+    NAZAJButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            /*JFrame frame = new JFrame("Login");
+            frame.setContentPane(new Login().Panel);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            panel.setVisible(false);
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }*/
+            
+
         }
     });
 }

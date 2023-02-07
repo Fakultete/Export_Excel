@@ -63,6 +63,12 @@ public class Login {
                 username_u = txtusername.getText();
                 pass_u = txtpass.getText();
 
+                if(username_u.isEmpty() || pass_u.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!!");
+                    return;
+                }
+
                 try {
                     pst = con.prepareStatement("SELECT select_user(?, ?);");
                     pst.setString(1, username_u);
@@ -74,16 +80,37 @@ public class Login {
                     txtusername.setText("");
                     txtpass.setText("");
 
-                    JFrame frame = new JFrame("FAKULTETE");
-                    frame.setContentPane(new Fakultete().Form);
-                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frame.pack();
-                    frame.setVisible(true);
+                    if(username_u.equals("admin") && pass_u.equals("pass"))
+                    {
+                            JFrame frame = new JFrame("FAKULTETE");
+                            frame.setContentPane(new Fakultete().Form);
+                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            frame.pack();
+                            frame.setVisible(true);
+                            Panel.setVisible(false);
+                            try {
+                                con.close();
+                            } catch (SQLException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                    }
+                    else {
+                        JFrame frame = new JFrame("Fakultete v Sloveniji");
+                        frame.setContentPane(new Uporabnik().Form);
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.pack();
+                        frame.setVisible(true);
+                        Panel.setVisible(false);
+                        try {
+                            con.close();
+                        } catch (SQLException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
 
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                     JOptionPane.showMessageDialog(null, "POSKUSITE ZNOVA!");
-
                 }
             }
         });

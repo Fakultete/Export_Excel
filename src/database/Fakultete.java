@@ -5,10 +5,7 @@ import javax.swing.*;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.sql.*;
 
 public class Fakultete{
@@ -25,9 +22,11 @@ public class Fakultete{
     private JComboBox kraji;
     private JButton OSVEZIButton;
     private JButton ODJAVAButton;
+    //private static JFrame frame;
 
 
     public static void main(String[] args) {
+
         JFrame frame = new JFrame("Fakultete");
         frame.setContentPane(new Fakultete().Form);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,7 +48,7 @@ public class Fakultete{
     }
     void table_load() {
         try {
-            pst = con.prepareStatement("SELECT f.id, f.ime, f.kljucna_beseda, f.opis, k.ime FROM fakultete f INNER JOIN kraji k ON k.id=f.kraj_id ORDER BY f.id;");
+            pst = con.prepareStatement("SELECT * FROM select_fak();");
             ResultSet rs = pst.executeQuery();
             fakultete.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException e) {
@@ -71,6 +70,12 @@ public class Fakultete{
                 kljucna_beseda_f = txtkljucna_beseda.getText();
                 opis_f = txtopis.getText();
                 kraj_f=kraji.getSelectedItem().toString();
+
+                if(ime_f.isEmpty() || kljucna_beseda_f.isEmpty() || kraj_f.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!");
+                    return;
+                }
 
                 try {
                     pst = con.prepareStatement("SELECT insert_fakultete(?, ?, ?, ?);");
@@ -118,12 +123,17 @@ public class Fakultete{
                 int SelectedRows = fakultete.getSelectedRow();
                 int auto_id=Integer.parseInt(RecordTable.getValueAt(SelectedRows, 0).toString());
 
-
                 String ime_f, kljucna_beseda_f, opis_f, kraj_f;
                 ime_f = txtime.getText();
                 kljucna_beseda_f = txtkljucna_beseda.getText();
                 kraj_f = kraji.getSelectedItem().toString();
                 opis_f = txtopis.getText();
+
+                if(ime_f.isEmpty() || kljucna_beseda_f.isEmpty() || kraj_f.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "Prosim vnesite podatke v vsa polja!!");
+                    return;
+                }
 
                 try {
                     pst = con.prepareStatement("SELECT update_fakultete(?, ?, ?, ?, ?);");
@@ -144,6 +154,7 @@ public class Fakultete{
                 catch (SQLException e1)
                 {
                     e1.printStackTrace();
+                    JOptionPane.showMessageDialog(null, "Nekaj je šlo narobe!");
                 }
             }
         });
@@ -179,7 +190,7 @@ public class Fakultete{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 try {
-                    pst = con.prepareStatement("SELECT k.ime FROM kraji k LEFT OUTER JOIN fakultete f on k.id = f.kraj_id ORDER BY k.ime ASC;");
+                    pst = con.prepareStatement("SELECT select_kraji_combobox();");
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -211,33 +222,33 @@ public class Fakultete{
                         // no application registered for PDFs
                     }
                 }*/
-                JFrame frame = new JFrame("Programi");
-                frame.setContentPane(new Programi().Form);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                Form.setVisible(false);
                 try {
                     con.close();
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex);
                 }
+                JFrame frame = new JFrame("Programi");
+                frame.setContentPane(new Programi().Form);
+                frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                Form.setVisible(false);
             }
         });
         ODJAVAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
                 JFrame frame = new JFrame("PRIJAVA");
                 frame.setContentPane(new Login().Panel);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
                 Form.setVisible(false);
-                try {
-                    con.close();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
             }
         });
     }

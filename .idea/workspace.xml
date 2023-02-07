@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="LOGIN in REGISTRACIJA uporabnika">
+    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Možnost zamenjave gesla">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Fakultete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Login.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Programi.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Programi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Zamenjava_gesla.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Zamenjava_gesla.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Zamenjava_gesla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Zamenjava_gesla.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +54,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;248&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zoja7/Documents/Toad Data Modeler/GeneratedScripts/Fakultete.sql&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zoja7/AppData/Roaming/JetBrains/IntelliJIdea2022.3/consoles/db/3b2b5340-a2a6-44d7-90b3-8db28732e743/console.sql&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,15 +72,29 @@
       &quot;postgresql&quot;
     ],
     &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743&quot;
+      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743&quot;,
+      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743/database/\&quot;vyrnewjo\&quot;&quot;
     ]
   }
 }</component>
   <component name="RunManager">
+    <configuration name="Programi" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.Programi" />
+      <module name="Fakultete" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/3b2b5340-a2a6-44d7-90b3-8db28732e743/console.sql" />
       <script-mode>FILE</script-mode>
-      <data-source id="3b2b5340-a2a6-44d7-90b3-8db28732e743" />
+      <data-source id="3b2b5340-a2a6-44d7-90b3-8db28732e743" namespace="database/&quot;vyrnewjo&quot;" />
       <method v="2" />
     </configuration>
   </component>
@@ -96,7 +114,22 @@
       <workItem from="1673092019983" duration="20764000" />
       <workItem from="1673166002307" duration="6644000" />
       <workItem from="1673266037629" duration="3676000" />
-      <workItem from="1673272661578" duration="36265000" />
+      <workItem from="1673272661578" duration="36400000" />
+      <workItem from="1673334962822" duration="2535000" />
+      <workItem from="1673337553326" duration="2412000" />
+      <workItem from="1673940864693" duration="393000" />
+      <workItem from="1674543873089" duration="6000" />
+      <workItem from="1675168150865" duration="224000" />
+      <workItem from="1675523283528" duration="9000" />
+      <workItem from="1675523595875" duration="3633000" />
+      <workItem from="1675542172175" duration="478000" />
+      <workItem from="1675602978242" duration="6004000" />
+      <workItem from="1675684159745" duration="657000" />
+      <workItem from="1675687718131" duration="1065000" />
+      <workItem from="1675693044501" duration="5616000" />
+      <workItem from="1675703311005" duration="14880000" />
+      <workItem from="1675718981503" duration="4143000" />
+      <workItem from="1675724695098" duration="4635000" />
     </task>
     <task id="LOCAL−00001" summary="Database">
       <created>1672149745904</created>
@@ -158,7 +191,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1673306683099</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="Možnost zamenjave gesla">
+      <created>1673310886883</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1673310886883</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +223,8 @@
     <MESSAGE value="INSERT, UPDATE, DELETE nad tabelo &quot;programi&quot;" />
     <MESSAGE value="Ustvarjeni Formi za LOGIN in REGISTRACIJO" />
     <MESSAGE value="LOGIN in REGISTRACIJA uporabnika" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOGIN in REGISTRACIJA uporabnika" />
+    <MESSAGE value="Možnost zamenjave gesla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Možnost zamenjave gesla" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Fakultete$Fakultete.ic" NAME="Fakultete Coverage Results" MODIFIED="1673094925885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
