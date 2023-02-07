@@ -209,6 +209,9 @@ public class Fakultete{
             @Override
             public void actionPerformed(ActionEvent e) {
                 table_load();
+                txtime.setText("");
+                txtkljucna_beseda.setText("");
+                txtopis.setText("");
             }
         });
         POJDINAPROGRAMEButton.addActionListener(new ActionListener() {

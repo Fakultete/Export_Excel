@@ -298,6 +298,11 @@ public class Programi {
             @Override
             public void actionPerformed(ActionEvent e) {
                 table_load();
+                txtime.setText("");
+                txtopis.setText("");
+                txtnovafak.setText("");
+                txt_kljuc.setText("");
+                txt_opis.setText("");
             }
         });
         iscifakulteta.addMouseListener(new MouseAdapter() {

@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Možnost zamenjave gesla">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3b2b5340-a2a6-44d7-90b3-8db28732e743/storage_v2/_src_/database/vyrnewjo.NvZiqw/schema/public.abK9xQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="b1cd4d1d-4398-4230-a2ad-b50a28042fe0" name="Changes" comment="Sprememba vseh SQL stavkov v funkcije, dodajanje triggerjev">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Fakultete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Fakultete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Programi.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Programi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Programi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Zamenjava_gesla.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Zamenjava_gesla.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Zamenjava_gesla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Zamenjava_gesla.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,38 +36,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;218&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;248&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Zoja7/AppData/Roaming/JetBrains/IntelliJIdea2022.3/consoles/db/3b2b5340-a2a6-44d7-90b3-8db28732e743/console.sql&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "218",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "248",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Users/Zoja7/Downloads/jar_file_2/log4j-core-2.17.2.0001L.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743&quot;,
-      &quot;3b2b5340-a2a6-44d7-90b3-8db28732e743/database/\&quot;vyrnewjo\&quot;&quot;
+    "RunConfigurationTargetLRU": [
+      "3b2b5340-a2a6-44d7-90b3-8db28732e743",
+      "3b2b5340-a2a6-44d7-90b3-8db28732e743/database/\"vyrnewjo\""
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Programi" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="database.Programi" />
@@ -129,7 +120,8 @@
       <workItem from="1675693044501" duration="5616000" />
       <workItem from="1675703311005" duration="14880000" />
       <workItem from="1675718981503" duration="4143000" />
-      <workItem from="1675724695098" duration="4635000" />
+      <workItem from="1675724695098" duration="4884000" />
+      <workItem from="1675753088316" duration="5129000" />
     </task>
     <task id="LOCAL−00001" summary="Database">
       <created>1672149745904</created>
@@ -197,7 +189,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1673310886883</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Sprememba vseh SQL stavkov v funkcije, dodajanje triggerjev">
+      <created>1675729434213</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1675729434214</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +222,8 @@
     <MESSAGE value="Ustvarjeni Formi za LOGIN in REGISTRACIJO" />
     <MESSAGE value="LOGIN in REGISTRACIJA uporabnika" />
     <MESSAGE value="Možnost zamenjave gesla" />
-    <option name="LAST_COMMIT_MESSAGE" value="Možnost zamenjave gesla" />
+    <MESSAGE value="Sprememba vseh SQL stavkov v funkcije, dodajanje triggerjev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sprememba vseh SQL stavkov v funkcije, dodajanje triggerjev" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Fakultete$Fakultete.ic" NAME="Fakultete Coverage Results" MODIFIED="1673094925885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
